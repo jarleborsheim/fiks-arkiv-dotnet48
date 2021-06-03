@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="appsettings.development.json" />
     <None Remove="appsettings.json" />
+    <None Include="appsettings.Development.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,13 +21,13 @@
     <EmbeddedResource Include="appsettings.Local.json" Condition="Exists('appsettings.Local.json')">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Remove="appsettings.DockerCompose.json"/>
-    <EmbeddedResource Include="appsettings.DockerCompose.json" CopyToOutputDirectory="Always" Condition="Exists('appsettings.DockerCompose.json')"/>
+    <None Remove="appsettings.DockerCompose.json" />
+    <EmbeddedResource Include="appsettings.DockerCompose.json" CopyToOutputDirectory="Always" Condition="Exists('appsettings.DockerCompose.json')" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="KS.Fiks.ASiC-E" Version="1.0.2" />
-    <PackageReference Include="KS.Fiks.IO.Client" Version="1.1.13" />
+    <PackageReference Include="KS.Fiks.ASiC-E" Version="1.0.3" />
+    <PackageReference Include="KS.Fiks.IO.Client" Version="1.2.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
   </ItemGroup>
 
@@ -34,6 +35,7 @@
     <ProjectReference Include="..\ks.fiks.io.arkivintegrasjon.client\ks.fiks.io.arkivintegrasjon.client.csproj" />
     <ProjectReference Include="..\ks.fiks.io.arkivintegrasjon.common\ks.fiks.io.arkivintegrasjon.common.csproj" />
     <ProjectReference Include="..\ks.fiks.io.arkivintegrasjon.sample.messages\ks.fiks.io.arkivintegrasjon.sample.messages.csproj" />
+    <ProjectReference Include="..\TestLib\TestLib.csproj" />
   </ItemGroup>
 
   <ItemGroup>

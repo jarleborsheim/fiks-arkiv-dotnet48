@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>Arbeidsgruppe GI Arkiv 2.0</Authors>
     <Company>KS og Kartverket</Company>
     <Description>Klient for å generere forenklede arkivmeldinger. Inneholder de mest vanlige brukstilfeller for arkivintegrasjon et fagsystem vil trenge.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <TargetFramework>net48</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>

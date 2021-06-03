@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 using FIKS.eMeldingArkiv.eMeldingForenkletArkiv;
@@ -13,6 +12,7 @@ using KS.Fiks.IO.Client;
 using KS.Fiks.IO.Client.Models;
 using ks.fiks.io.fagsystem.arkiv.sample.ForenkletArkivering;
 using Microsoft.Extensions.Hosting;
+using TestLib;
 
 namespace ks.fiks.io.fagsystem.arkiv.sample
 {
@@ -23,6 +23,17 @@ namespace ks.fiks.io.fagsystem.arkiv.sample
 
         public ArkiveringService(AppSettings appSettings)
         {
+            // Testing import of dotnet core 3.1/dotnet standard lib and calling
+            var shouldFail = new ShouldFail();
+            try
+            {
+                shouldFail.AlwaysFailWithAggregateException();
+            }
+            catch (AggregateException aggregateException)
+            {
+                // Do nothing
+            }
+            
             this.appSettings = appSettings;
             client = FiksIOClientBuilder.CreateFiksIoClient(appSettings);
         }
