@@ -1,4 +1,7 @@
-# fiks-arkiv
+# fiks-arkiv - FORK
+
+## Om denne forken
+Dette er en fork laget for å teste ut applikasjon som kjører på .NET framework 4.8 og som bruker fiks-io nuget pakker.
 
 ## Om applikasjonen
 Dette repositoriet inneholder applikasjoner som kan emulere diverse mottakende systemer fra fiks-io plattformen. 
